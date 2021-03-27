@@ -22,6 +22,16 @@ def initialize(p_roll, roll_guarantee, p_roll_value, value_guarantee, p_roll_sub
 
 
 def proportions(p0):
+    """
+
+    Parameters
+    ----------
+    p0: np.ndarray
+
+    Returns
+    -------
+
+    """
     prob_per_step = p0.sum(1)
     rownorm = p0 / prob_per_step.reshape(-1, 1)
     rownorm[np.isnan(rownorm)] = 0.
@@ -86,7 +96,7 @@ if __name__ == '__main__':
     ps = simple_cumprob(0.006, 90, 1, 1)
     _ = plt.figure(figsize=(12, 10))
     plt.plot(np.arange(len(ps)) + 1, ps)
-    plt.title('Chance of rolling a 5* item')
+    plt.title('Chance of rolling any 5*')
     plt.xlabel('Rolls')
     plt.ylabel('Cumulative probability')
     plt.grid()
