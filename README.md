@@ -1,1 +1,2 @@
-# what-are-the-chances
+# What Are the Chances
+Calculator for rates
